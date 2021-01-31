@@ -1,0 +1,36 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<html>
+<head>
+    <title>Lista de Pacientes Cadastrados</title>
+</head>
+<body>
+    <h2>Lista de Pacientes Cadastrados</h2>
+
+    <c:if test="${not empty paciente}">
+        <table>
+            <tr>
+                <td>Identificacao</td>
+                <td>Sexo</td>
+                <td>Idade</td>
+                
+            </tr>
+
+
+            <c:forEach var="listValue" items="${pacientes}">
+
+                <tr>
+                    <td>${listValue.id}</td>
+                    <td>${listValue.sexo}</td>
+                    <td>${listValue.idade}</td>
+                                   
+                </tr>
+            </c:forEach>
+
+        </table>
+
+    </c:if>
+    <a href="/paciente/paciente">Cadastro</a>
+
+</body>
+</html>

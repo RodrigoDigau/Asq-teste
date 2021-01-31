@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<html>
+<head>
+    <title>Cadastro de paciente</title>
+</head>
+<body>
+
+<h2>Formulário de Cadastro de Paciente</h2>
+<form:form method="POST" action="/paciente/addPaciente">
+   <table>
+     <tr>
+        <td><form:label path="id">id</form:label>
+        </td>
+        <td><form:input path="id" /></td>
+    </tr>
+    <tr>
+        <td><form:label path="sexo">Sexo:</form:label>
+        </td>
+        <td><form:input path="sexo" /></td>
+    </tr>
+    <tr>
+        <td><form:label path="idade">Idade:</form:label>
+        </td>
+        <td><form:textarea path="idade" /></td>
+    </tr>
+    
+    <tr>
+        <td colspan="2">
+            <input type="submit" value="Submit"/>
+        </td>
+    </tr>
+</table>
+</form:form>
+<a href="/paciente/listapaciente">Lista</a>
+
+</body>
+</html>
